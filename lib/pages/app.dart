@@ -22,7 +22,7 @@ class _AppState extends State<App> {
 
   List bottomMenuItems = [
     {'icon': Icons.home, 'label': 'Home', 'tooltip': 'Home'},
-    {'icon': Icons.category, 'label': 'Category', 'tooltip': 'Category'},
+    {'icon': Icons.category, 'label': 'Categories', 'tooltip': 'Categories'},
     {'icon': Icons.shopping_cart_sharp, 'label': 'Cart', 'tooltip': 'Cart'},
     {'icon': Icons.person_sharp, 'label': 'Profile', 'tooltip': 'Profile'},
   ];
