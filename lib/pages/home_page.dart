@@ -77,12 +77,11 @@ class _HomePageState extends State<HomePage> {
               }).toList(),
             ),
             //Hot Sale card
-            SizedBox(height: 10),
-            Row(
-              children: [
-                SectionHead(headingText: 'Hot Selling Products', viewAllText: 'View All'),
-              ],
-            )
+            SizedBox(height: 15),
+            SectionHead(headingText: 'Hot Selling Products', viewAllText: 'View All'),
+            SizedBox(height: 15),
+            // Product Card
+
 
           ],
         ),
