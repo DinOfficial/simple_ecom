@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 import '../widgets/category_card.dart';
 import '../widgets/home_search.dart';
+import '../widgets/section_head.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -19,7 +20,7 @@ class _HomePageState extends State<HomePage> {
     {"name": "Appliance", "image": "assets/images/category3.png"},
     {"name": "Beauty", "image": "assets/images/category4.jpg"},
     {"name": "Furniture", "image": "assets/images/category5.png"},
-    {"name": "Gorcery", "image": "assets/images/category6.png"},
+    {"name": "Grocery", "image": "assets/images/category6.png"},
   ];
 
   List<String>bennerImg =[
@@ -41,32 +42,7 @@ class _HomePageState extends State<HomePage> {
             SizedBox(height: 10),
 
             // Category heading
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  'Categories',
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                ),
-                Row(
-                  children: [
-                    Text(
-                      'View All',
-                      style: TextStyle(
-                        fontSize: 16,
-                        color: Colors.black.withOpacity(.6),
-                      ),
-                    ),
-                    Icon(
-                      Icons.arrow_forward,
-                      size: 20,
-                      color: Colors.black.withOpacity(.6),
-                    ),
-                  ],
-                ),
-              ],
-            ),
+            SectionHead( headingText:'Categories', viewAllText: 'View All' ),
             SizedBox(height: 10),
 
             // Categories
@@ -99,12 +75,20 @@ class _HomePageState extends State<HomePage> {
                   },
                 );
               }).toList(),
+            ),
+            //Hot Sale card
+            SizedBox(height: 10),
+            Row(
+              children: [
+                SectionHead(headingText: 'Hot Selling Products', viewAllText: 'View All'),
+              ],
             )
 
-            //Hot Sale card
           ],
         ),
       ),
     );
   }
 }
+
+
