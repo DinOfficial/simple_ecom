@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 import '../widgets/category_card.dart';
 import '../widgets/home_search.dart';
+import '../widgets/product_card.dart';
 import '../widgets/section_head.dart';
 
 class HomePage extends StatefulWidget {
@@ -66,7 +67,7 @@ class _HomePageState extends State<HomePage> {
               // Banner (Carousel)
               CarouselSlider(
                 options: CarouselOptions(
-                  height: 150,
+                  height: 120,
                   autoPlay: true,
                   autoPlayInterval: Duration(seconds: 2),
                 ),
@@ -78,8 +79,9 @@ class _HomePageState extends State<HomePage> {
                   );
                 }).toList(),
               ),
+
               //Hot Sale card
-              SizedBox(height: 15),
+              SizedBox(height: 20),
               // Product Card
               Container(
                 color: Colors.white,
@@ -91,117 +93,12 @@ class _HomePageState extends State<HomePage> {
                     ),
                     SizedBox(height: 15),
                     SizedBox(
-                      height: 330,
+                      height: 310,
                       child: ListView.builder(
                         itemCount: 4,
                         scrollDirection: Axis.horizontal,
                         itemBuilder: (context, index){
-                          return Padding(
-                            padding: const EdgeInsets.only(right: 10),
-                            child: SizedBox(
-                              width: width * .45,
-                              child: Column(
-                                children: [
-                                  // Product Image
-                                  Stack(
-                                    children: [
-                                      ClipRRect(
-                                        borderRadius: BorderRadius.circular(10),
-                                        child: Image.asset(
-                                          width: double.infinity,
-                                          height: 180,
-                                          fit: BoxFit.cover,
-                                          'assets/images/products/product1.png',
-                                        ),
-                                      ),
-                                      // Top Seller Tag
-                                      Positioned(
-                                        left: 10,
-                                        top: 10,
-                                        child: Container(
-                                          height: 30,
-                                          width: 100,
-                                          alignment: Alignment.center,
-                                          decoration: BoxDecoration(
-                                            color: Colors.red,
-                                            borderRadius: BorderRadius.circular(10),
-                                          ),
-                                          child: Text(
-                                            'Top Seller',
-                                            style: TextStyle(
-                                              fontWeight: FontWeight.bold,
-                                              color: Colors.white,
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                      // Favorite Button
-                                      Positioned(
-                                        right: 7,
-                                        top: 7,
-                                        child: Container(
-                                          height: 40,
-                                          width: 40,
-                                          alignment: Alignment.center,
-                                          decoration: BoxDecoration(
-                                            color: Colors.white54,
-                                            borderRadius: BorderRadius.circular(50),
-                                          ),
-                                          child: IconButton(
-                                            onPressed: () {},
-                                            icon: Icon(
-                                              Icons.favorite_border,
-                                              color: Colors.red,
-                                              size: 25,
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-
-                                  // Product Details
-                                  SizedBox(height: 10),
-                                  // Product Name
-                                  Text('Adidas White Sneakers for man', style: TextStyle(fontSize: 17, fontWeight: FontWeight.bold)),
-                                  SizedBox(height: 5),
-                                  // Product Price
-                                  Row(
-                                    children: [
-                                      Text('\$68', style: TextStyle(fontSize: 17, fontWeight: FontWeight.bold)),
-                                      SizedBox(width: 5),
-                                      Text('\$136', style: TextStyle(fontSize: 16, decoration: TextDecoration.lineThrough, color: Colors.grey)),
-                                      SizedBox(width: 5),
-                                      Text('50% off', style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold, color: Colors.red.shade500)),
-                                    ],
-                                  ),
-                                  SizedBox(height: 10),
-
-                                  // Rating
-                                  Row(
-                                    children: [
-                                      Container(
-                                        height: 25,
-                                        width: 25,
-                                        decoration: BoxDecoration(
-                                          color: Colors.amber,
-                                          borderRadius: BorderRadius.circular(5),
-                                        ),
-                                        child: Icon(
-                                            Icons.star, color: Colors.white70, size: 20),
-                                      ),
-                                      SizedBox(width: 10),
-                                      Text('4.8', style: TextStyle(fontSize: 18,color: Colors.black, )),
-                                      SizedBox(width: 10),
-                                      Text('(692)', style: TextStyle(fontSize: 18,color: Colors.black, )),
-
-
-                                    ],
-                                  ),
-                                ],
-                              ),
-                            ),
-                          );
+                          return ProductCard(width: width);
                         }
                       ),
                     )
@@ -227,112 +124,7 @@ class _HomePageState extends State<HomePage> {
                           itemCount: 4,
                           scrollDirection: Axis.horizontal,
                           itemBuilder: (context, index){
-                            return Padding(
-                              padding: const EdgeInsets.only(right: 10),
-                              child: SizedBox(
-                                width: width * .45,
-                                child: Column(
-                                  children: [
-                                    // Product Image
-                                    Stack(
-                                      children: [
-                                        ClipRRect(
-                                          borderRadius: BorderRadius.circular(10),
-                                          child: Image.asset(
-                                            width: double.infinity,
-                                            height: 180,
-                                            fit: BoxFit.cover,
-                                            'assets/images/products/product1.png',
-                                          ),
-                                        ),
-                                        // Top Seller Tag
-                                        Positioned(
-                                          left: 10,
-                                          top: 10,
-                                          child: Container(
-                                            height: 30,
-                                            width: 100,
-                                            alignment: Alignment.center,
-                                            decoration: BoxDecoration(
-                                              color: Colors.red,
-                                              borderRadius: BorderRadius.circular(10),
-                                            ),
-                                            child: Text(
-                                              'Top Seller',
-                                              style: TextStyle(
-                                                fontWeight: FontWeight.bold,
-                                                color: Colors.white,
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                        // Favorite Button
-                                        Positioned(
-                                          right: 7,
-                                          top: 7,
-                                          child: Container(
-                                            height: 40,
-                                            width: 40,
-                                            alignment: Alignment.center,
-                                            decoration: BoxDecoration(
-                                              color: Colors.white54,
-                                              borderRadius: BorderRadius.circular(50),
-                                            ),
-                                            child: IconButton(
-                                              onPressed: () {},
-                                              icon: Icon(
-                                                Icons.favorite_border,
-                                                color: Colors.red,
-                                                size: 25,
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-
-                                    // Product Details
-                                    SizedBox(height: 10),
-                                    // Product Name
-                                    Text('Adidas White Sneakers for man', style: TextStyle(fontSize: 17, fontWeight: FontWeight.bold)),
-                                    SizedBox(height: 5),
-                                    // Product Price
-                                    Row(
-                                      children: [
-                                        Text('\$68', style: TextStyle(fontSize: 17, fontWeight: FontWeight.bold)),
-                                        SizedBox(width: 5),
-                                        Text('\$136', style: TextStyle(fontSize: 16, decoration: TextDecoration.lineThrough, color: Colors.grey)),
-                                        SizedBox(width: 5),
-                                        Text('50% off', style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold, color: Colors.red.shade500)),
-                                      ],
-                                    ),
-                                    SizedBox(height: 10),
-
-                                    // Rating
-                                    Row(
-                                      children: [
-                                        Container(
-                                          height: 25,
-                                          width: 25,
-                                          decoration: BoxDecoration(
-                                            color: Colors.amber,
-                                            borderRadius: BorderRadius.circular(5),
-                                          ),
-                                          child: Icon(
-                                              Icons.star, color: Colors.white70, size: 20),
-                                        ),
-                                        SizedBox(width: 10),
-                                        Text('4.8', style: TextStyle(fontSize: 18,color: Colors.black, )),
-                                        SizedBox(width: 10),
-                                        Text('(692)', style: TextStyle(fontSize: 18,color: Colors.black, )),
-
-
-                                      ],
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            );
+                            return ProductCard(width: width);
                           }
                       ),
                     )
@@ -346,3 +138,5 @@ class _HomePageState extends State<HomePage> {
     );
   }
 }
+
+

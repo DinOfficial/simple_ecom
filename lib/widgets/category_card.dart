@@ -19,7 +19,7 @@ class CategoryCard extends StatelessWidget {
         children: [
           ClipRRect(
             borderRadius: BorderRadius.circular(50),
-            child:  Image.asset(image, height: 80, width: 80, fit: BoxFit.cover),
+            child:  Image.asset(image, height: 50, width: 50, fit: BoxFit.cover),
           ),
           SizedBox(height: 5,),
           Text(name, style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
